@@ -1,0 +1,149 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4945,        141]
+NotebookOptionsPosition[      4371,        121]
+NotebookOutlinePosition[      4737,        137]
+CellTagsIndexPosition[      4694,        134]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Get", "[", 
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+     "\"\<SU3WFBuilder.wl\>\""}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Diagram", "=", 
+  RowBox[{"ProductTripletB", "[", "Core", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"RootWeightPlot", "[", "Diagram", "]"}]}], "Input",
+ CellLabel->"In[7]:=",ExpressionUUID->"2cb7338f-c66b-4b8b-8632-c60ca1073822"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ GraphicsBox[{{}, {
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Large], 
+     AbsoluteThickness[1.6], 
+     PointBox[{{0., 0.}, {-1., 0.}, {-0.5, -1.}, {1., 0.}, {0.5, -1.}, {0.5, 
+      1.}, {-0.5, 1.}}]}, {
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Large], 
+      AbsoluteThickness[1.6]}, {}}, {
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Large], 
+      AbsoluteThickness[1.6]}, {}}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{-1., 1.}, {-1., 1.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Print",
+ CellChangeTimes->{3.9079846911604652`*^9},
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"56c10a91-91ab-4e89-bd57-d1bb97f7603c"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7}, {Null, 
+       SparseArray[
+       Automatic, {7, 7}, 0, {
+        1, {{0, 6, 9, 12, 15, 18, 21, 24}, {{2}, {3}, {4}, {5}, {6}, {7}, {
+          1}, {3}, {7}, {1}, {2}, {5}, {1}, {5}, {6}, {1}, {3}, {4}, {1}, {
+          4}, {7}, {1}, {2}, {6}}}, Pattern}]}, {
+      GraphLayout -> "SpringEmbedding"}]]}, 
+    TagBox[
+     GraphicsGroupBox[
+      GraphicsComplexBox[{{1.0001075464948372`, 0.868944889005295}, {
+       0.49485471280125304`, 0.005911950393611143}, {0., 
+       0.8748589156818102}, {1.5050630985417137`, 1.7320244732752994`}, {
+       0.5050725239016012, 1.7378346134402327`}, {2.0000095640295648`, 
+       0.8630748099759266}, {1.494904931216307, 0.}}, {
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+         LineBox[{{1, 2}, {1, 3}, {1, 4}, {1, 5}, {1, 6}, {1, 7}, {2, 3}, {2, 
+          7}, {3, 5}, {4, 5}, {4, 6}, {6, 7}}]}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         DiskBox[1, 0.022611542569870885], DiskBox[2, 0.022611542569870885], 
+         DiskBox[3, 0.022611542569870885], DiskBox[4, 0.022611542569870885], 
+         DiskBox[5, 0.022611542569870885], DiskBox[6, 0.022611542569870885], 
+         DiskBox[7, 0.022611542569870885]}}]],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Print",
+ CellChangeTimes->{3.907984691174653*^9},
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"588a51d5-6d2b-4c19-98c3-8f28f0e9eea7"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 756},
+WindowMargins->{{Automatic, 162}, {Automatic, 65}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 465, 11, 118, "Input",ExpressionUUID->"2cb7338f-c66b-4b8b-8632-c60ca1073822"],
+Cell[CellGroupData[{
+Cell[1070, 37, 1537, 43, 249, "Print",ExpressionUUID->"56c10a91-91ab-4e89-bd57-d1bb97f7603c"],
+Cell[2610, 82, 1733, 35, 355, "Print",ExpressionUUID->"588a51d5-6d2b-4c19-98c3-8f28f0e9eea7"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
