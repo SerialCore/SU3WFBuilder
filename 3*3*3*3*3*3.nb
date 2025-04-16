@@ -1,0 +1,680 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33555,        672]
+NotebookOptionsPosition[     32918,        651]
+NotebookOutlinePosition[     33341,        668]
+CellTagsIndexPosition[     33298,        665]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Get", "[", 
+    RowBox[{
+     RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+     "\"\<SU3WFBuilder.wl\>\""}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"SU3WFBuilder", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<q\>\"", ",", "\"\<q\>\"", ",", "\"\<q\>\"", ",", "\"\<q\>\"", ",", 
+     "\"\<q\>\"", ",", "\"\<q\>\""}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<A\>\"", ",", "\"\<S\>\""}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.907906922128433*^9, 3.907906928703992*^9}, {
+   3.907911195597934*^9, 3.907911218464581*^9}, {3.907911478776153*^9, 
+   3.90791148289224*^9}, {3.907977668743088*^9, 3.9079777273578877`*^9}, {
+   3.907977780553885*^9, 3.9079777928924737`*^9}, {3.907977967975378*^9, 
+   3.907978000695633*^9}, {3.90798429031974*^9, 3.907984290771414*^9}, {
+   3.907984379234163*^9, 3.907984447756631*^9}, {3.907984498186512*^9, 
+   3.907984580039534*^9}, 3.907984680841547*^9, {3.90798474311669*^9, 
+   3.907984753078724*^9}, {3.907984906834375*^9, 3.907984911419614*^9}, 
+   3.911296273651751*^9, {3.911448025003345*^9, 3.911448025276411*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"20069e3a-2351-4b02-941c-d04fd54b2688"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2", ",", 
+     RowBox[{"{", "\<\"rrrrrr\"\>", "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"grrrrr\"\>", ",", "\<\"rgrrrr\"\>", ",", "\<\"rrgrrr\"\>", 
+       ",", "\<\"rrrgrr\"\>", ",", "\<\"rrrrgr\"\>", ",", "\<\"rrrrrg\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["5", "2"], ",", "1", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"brrrrr\"\>", ",", "\<\"rbrrrr\"\>", ",", "\<\"rrbrrr\"\>", 
+       ",", "\<\"rrrbrr\"\>", ",", "\<\"rrrrbr\"\>", ",", "\<\"rrrrrb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"ggrrrr\"\>", ",", "\<\"grgrrr\"\>", ",", "\<\"rggrrr\"\>", 
+       ",", "\<\"grrgrr\"\>", ",", "\<\"rgrgrr\"\>", ",", "\<\"rrggrr\"\>", 
+       ",", "\<\"grrrgr\"\>", ",", "\<\"rgrrgr\"\>", ",", "\<\"rrgrgr\"\>", 
+       ",", "\<\"rrrggr\"\>", ",", "\<\"grrrrg\"\>", ",", "\<\"rgrrrg\"\>", 
+       ",", "\<\"rrgrrg\"\>", ",", "\<\"rrrgrg\"\>", ",", "\<\"rrrrgg\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "2"], ",", "1", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bgrrrr\"\>", ",", "\<\"gbrrrr\"\>", ",", "\<\"brgrrr\"\>", 
+       ",", "\<\"rbgrrr\"\>", ",", "\<\"grbrrr\"\>", ",", "\<\"rgbrrr\"\>", 
+       ",", "\<\"brrgrr\"\>", ",", "\<\"rbrgrr\"\>", ",", "\<\"rrbgrr\"\>", 
+       ",", "\<\"grrbrr\"\>", ",", "\<\"rgrbrr\"\>", ",", "\<\"rrgbrr\"\>", 
+       ",", "\<\"brrrgr\"\>", ",", "\<\"rbrrgr\"\>", ",", "\<\"rrbrgr\"\>", 
+       ",", "\<\"rrrbgr\"\>", ",", "\<\"grrrbr\"\>", ",", "\<\"rgrrbr\"\>", 
+       ",", "\<\"rrgrbr\"\>", ",", "\<\"rrrgbr\"\>", ",", "\<\"brrrrg\"\>", 
+       ",", "\<\"rbrrrg\"\>", ",", "\<\"rrbrrg\"\>", ",", "\<\"rrrbrg\"\>", 
+       ",", "\<\"rrrrbg\"\>", ",", "\<\"grrrrb\"\>", ",", "\<\"rgrrrb\"\>", 
+       ",", "\<\"rrgrrb\"\>", ",", "\<\"rrrgrb\"\>", ",", "\<\"rrrrgb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbrrrr\"\>", ",", "\<\"brbrrr\"\>", ",", "\<\"rbbrrr\"\>", 
+       ",", "\<\"brrbrr\"\>", ",", "\<\"rbrbrr\"\>", ",", "\<\"rrbbrr\"\>", 
+       ",", "\<\"brrrbr\"\>", ",", "\<\"rbrrbr\"\>", ",", "\<\"rrbrbr\"\>", 
+       ",", "\<\"rrrbbr\"\>", ",", "\<\"brrrrb\"\>", ",", "\<\"rbrrrb\"\>", 
+       ",", "\<\"rrbrrb\"\>", ",", "\<\"rrrbrb\"\>", ",", "\<\"rrrrbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"gggrrr\"\>", ",", "\<\"ggrgrr\"\>", ",", "\<\"grggrr\"\>", 
+       ",", "\<\"rgggrr\"\>", ",", "\<\"ggrrgr\"\>", ",", "\<\"grgrgr\"\>", 
+       ",", "\<\"rggrgr\"\>", ",", "\<\"grrggr\"\>", ",", "\<\"rgrggr\"\>", 
+       ",", "\<\"rrgggr\"\>", ",", "\<\"ggrrrg\"\>", ",", "\<\"grgrrg\"\>", 
+       ",", "\<\"rggrrg\"\>", ",", "\<\"grrgrg\"\>", ",", "\<\"rgrgrg\"\>", 
+       ",", "\<\"rrggrg\"\>", ",", "\<\"grrrgg\"\>", ",", "\<\"rgrrgg\"\>", 
+       ",", "\<\"rrgrgg\"\>", ",", "\<\"rrrggg\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", "1", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bggrrr\"\>", ",", "\<\"gbgrrr\"\>", ",", "\<\"ggbrrr\"\>", 
+       ",", "\<\"bgrgrr\"\>", ",", "\<\"gbrgrr\"\>", ",", "\<\"brggrr\"\>", 
+       ",", "\<\"rbggrr\"\>", ",", "\<\"grbgrr\"\>", ",", "\<\"rgbgrr\"\>", 
+       ",", "\<\"ggrbrr\"\>", ",", "\<\"grgbrr\"\>", ",", "\<\"rggbrr\"\>", 
+       ",", "\<\"bgrrgr\"\>", ",", "\<\"gbrrgr\"\>", ",", "\<\"brgrgr\"\>", 
+       ",", "\<\"rbgrgr\"\>", ",", "\<\"grbrgr\"\>", ",", "\<\"rgbrgr\"\>", 
+       ",", "\<\"brrggr\"\>", ",", "\<\"rbrggr\"\>", ",", "\<\"rrbggr\"\>", 
+       ",", "\<\"grrbgr\"\>", ",", "\<\"rgrbgr\"\>", ",", "\<\"rrgbgr\"\>", 
+       ",", "\<\"ggrrbr\"\>", ",", "\<\"grgrbr\"\>", ",", "\<\"rggrbr\"\>", 
+       ",", "\<\"grrgbr\"\>", ",", "\<\"rgrgbr\"\>", ",", "\<\"rrggbr\"\>", 
+       ",", "\<\"bgrrrg\"\>", ",", "\<\"gbrrrg\"\>", ",", "\<\"brgrrg\"\>", 
+       ",", "\<\"rbgrrg\"\>", ",", "\<\"grbrrg\"\>", ",", "\<\"rgbrrg\"\>", 
+       ",", "\<\"brrgrg\"\>", ",", "\<\"rbrgrg\"\>", ",", "\<\"rrbgrg\"\>", 
+       ",", "\<\"grrbrg\"\>", ",", "\<\"rgrbrg\"\>", ",", "\<\"rrgbrg\"\>", 
+       ",", "\<\"brrrgg\"\>", ",", "\<\"rbrrgg\"\>", ",", "\<\"rrbrgg\"\>", 
+       ",", "\<\"rrrbgg\"\>", ",", "\<\"grrrbg\"\>", ",", "\<\"rgrrbg\"\>", 
+       ",", "\<\"rrgrbg\"\>", ",", "\<\"rrrgbg\"\>", ",", "\<\"ggrrrb\"\>", 
+       ",", "\<\"grgrrb\"\>", ",", "\<\"rggrrb\"\>", ",", "\<\"grrgrb\"\>", 
+       ",", "\<\"rgrgrb\"\>", ",", "\<\"rrggrb\"\>", ",", "\<\"grrrgb\"\>", 
+       ",", "\<\"rgrrgb\"\>", ",", "\<\"rrgrgb\"\>", ",", "\<\"rrrggb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbgrrr\"\>", ",", "\<\"bgbrrr\"\>", ",", "\<\"gbbrrr\"\>", 
+       ",", "\<\"bbrgrr\"\>", ",", "\<\"brbgrr\"\>", ",", "\<\"rbbgrr\"\>", 
+       ",", "\<\"bgrbrr\"\>", ",", "\<\"gbrbrr\"\>", ",", "\<\"brgbrr\"\>", 
+       ",", "\<\"rbgbrr\"\>", ",", "\<\"grbbrr\"\>", ",", "\<\"rgbbrr\"\>", 
+       ",", "\<\"bbrrgr\"\>", ",", "\<\"brbrgr\"\>", ",", "\<\"rbbrgr\"\>", 
+       ",", "\<\"brrbgr\"\>", ",", "\<\"rbrbgr\"\>", ",", "\<\"rrbbgr\"\>", 
+       ",", "\<\"bgrrbr\"\>", ",", "\<\"gbrrbr\"\>", ",", "\<\"brgrbr\"\>", 
+       ",", "\<\"rbgrbr\"\>", ",", "\<\"grbrbr\"\>", ",", "\<\"rgbrbr\"\>", 
+       ",", "\<\"brrgbr\"\>", ",", "\<\"rbrgbr\"\>", ",", "\<\"rrbgbr\"\>", 
+       ",", "\<\"grrbbr\"\>", ",", "\<\"rgrbbr\"\>", ",", "\<\"rrgbbr\"\>", 
+       ",", "\<\"bbrrrg\"\>", ",", "\<\"brbrrg\"\>", ",", "\<\"rbbrrg\"\>", 
+       ",", "\<\"brrbrg\"\>", ",", "\<\"rbrbrg\"\>", ",", "\<\"rrbbrg\"\>", 
+       ",", "\<\"brrrbg\"\>", ",", "\<\"rbrrbg\"\>", ",", "\<\"rrbrbg\"\>", 
+       ",", "\<\"rrrbbg\"\>", ",", "\<\"bgrrrb\"\>", ",", "\<\"gbrrrb\"\>", 
+       ",", "\<\"brgrrb\"\>", ",", "\<\"rbgrrb\"\>", ",", "\<\"grbrrb\"\>", 
+       ",", "\<\"rgbrrb\"\>", ",", "\<\"brrgrb\"\>", ",", "\<\"rbrgrb\"\>", 
+       ",", "\<\"rrbgrb\"\>", ",", "\<\"grrbrb\"\>", ",", "\<\"rgrbrb\"\>", 
+       ",", "\<\"rrgbrb\"\>", ",", "\<\"brrrgb\"\>", ",", "\<\"rbrrgb\"\>", 
+       ",", "\<\"rrbrgb\"\>", ",", "\<\"rrrbgb\"\>", ",", "\<\"grrrbb\"\>", 
+       ",", "\<\"rgrrbb\"\>", ",", "\<\"rrgrbb\"\>", ",", "\<\"rrrgbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "2"], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbrrr\"\>", ",", "\<\"bbrbrr\"\>", ",", "\<\"brbbrr\"\>", 
+       ",", "\<\"rbbbrr\"\>", ",", "\<\"bbrrbr\"\>", ",", "\<\"brbrbr\"\>", 
+       ",", "\<\"rbbrbr\"\>", ",", "\<\"brrbbr\"\>", ",", "\<\"rbrbbr\"\>", 
+       ",", "\<\"rrbbbr\"\>", ",", "\<\"bbrrrb\"\>", ",", "\<\"brbrrb\"\>", 
+       ",", "\<\"rbbrrb\"\>", ",", "\<\"brrbrb\"\>", ",", "\<\"rbrbrb\"\>", 
+       ",", "\<\"rrbbrb\"\>", ",", "\<\"brrrbb\"\>", ",", "\<\"rbrrbb\"\>", 
+       ",", "\<\"rrbrbb\"\>", ",", "\<\"rrrbbb\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"ggggrr\"\>", ",", "\<\"gggrgr\"\>", ",", "\<\"ggrggr\"\>", 
+       ",", "\<\"grgggr\"\>", ",", "\<\"rggggr\"\>", ",", "\<\"gggrrg\"\>", 
+       ",", "\<\"ggrgrg\"\>", ",", "\<\"grggrg\"\>", ",", "\<\"rgggrg\"\>", 
+       ",", "\<\"ggrrgg\"\>", ",", "\<\"grgrgg\"\>", ",", "\<\"rggrgg\"\>", 
+       ",", "\<\"grrggg\"\>", ",", "\<\"rgrggg\"\>", ",", "\<\"rrgggg\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", "1", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bgggrr\"\>", ",", "\<\"gbggrr\"\>", ",", "\<\"ggbgrr\"\>", 
+       ",", "\<\"gggbrr\"\>", ",", "\<\"bggrgr\"\>", ",", "\<\"gbgrgr\"\>", 
+       ",", "\<\"ggbrgr\"\>", ",", "\<\"bgrggr\"\>", ",", "\<\"gbrggr\"\>", 
+       ",", "\<\"brgggr\"\>", ",", "\<\"rbgggr\"\>", ",", "\<\"grbggr\"\>", 
+       ",", "\<\"rgbggr\"\>", ",", "\<\"ggrbgr\"\>", ",", "\<\"grgbgr\"\>", 
+       ",", "\<\"rggbgr\"\>", ",", "\<\"gggrbr\"\>", ",", "\<\"ggrgbr\"\>", 
+       ",", "\<\"grggbr\"\>", ",", "\<\"rgggbr\"\>", ",", "\<\"bggrrg\"\>", 
+       ",", "\<\"gbgrrg\"\>", ",", "\<\"ggbrrg\"\>", ",", "\<\"bgrgrg\"\>", 
+       ",", "\<\"gbrgrg\"\>", ",", "\<\"brggrg\"\>", ",", "\<\"rbggrg\"\>", 
+       ",", "\<\"grbgrg\"\>", ",", "\<\"rgbgrg\"\>", ",", "\<\"ggrbrg\"\>", 
+       ",", "\<\"grgbrg\"\>", ",", "\<\"rggbrg\"\>", ",", "\<\"bgrrgg\"\>", 
+       ",", "\<\"gbrrgg\"\>", ",", "\<\"brgrgg\"\>", ",", "\<\"rbgrgg\"\>", 
+       ",", "\<\"grbrgg\"\>", ",", "\<\"rgbrgg\"\>", ",", "\<\"brrggg\"\>", 
+       ",", "\<\"rbrggg\"\>", ",", "\<\"rrbggg\"\>", ",", "\<\"grrbgg\"\>", 
+       ",", "\<\"rgrbgg\"\>", ",", "\<\"rrgbgg\"\>", ",", "\<\"ggrrbg\"\>", 
+       ",", "\<\"grgrbg\"\>", ",", "\<\"rggrbg\"\>", ",", "\<\"grrgbg\"\>", 
+       ",", "\<\"rgrgbg\"\>", ",", "\<\"rrggbg\"\>", ",", "\<\"gggrrb\"\>", 
+       ",", "\<\"ggrgrb\"\>", ",", "\<\"grggrb\"\>", ",", "\<\"rgggrb\"\>", 
+       ",", "\<\"ggrrgb\"\>", ",", "\<\"grgrgb\"\>", ",", "\<\"rggrgb\"\>", 
+       ",", "\<\"grrggb\"\>", ",", "\<\"rgrggb\"\>", ",", "\<\"rrgggb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbggrr\"\>", ",", "\<\"bgbgrr\"\>", ",", "\<\"gbbgrr\"\>", 
+       ",", "\<\"bggbrr\"\>", ",", "\<\"gbgbrr\"\>", ",", "\<\"ggbbrr\"\>", 
+       ",", "\<\"bbgrgr\"\>", ",", "\<\"bgbrgr\"\>", ",", "\<\"gbbrgr\"\>", 
+       ",", "\<\"bbrggr\"\>", ",", "\<\"brbggr\"\>", ",", "\<\"rbbggr\"\>", 
+       ",", "\<\"bgrbgr\"\>", ",", "\<\"gbrbgr\"\>", ",", "\<\"brgbgr\"\>", 
+       ",", "\<\"rbgbgr\"\>", ",", "\<\"grbbgr\"\>", ",", "\<\"rgbbgr\"\>", 
+       ",", "\<\"bggrbr\"\>", ",", "\<\"gbgrbr\"\>", ",", "\<\"ggbrbr\"\>", 
+       ",", "\<\"bgrgbr\"\>", ",", "\<\"gbrgbr\"\>", ",", "\<\"brggbr\"\>", 
+       ",", "\<\"rbggbr\"\>", ",", "\<\"grbgbr\"\>", ",", "\<\"rgbgbr\"\>", 
+       ",", "\<\"ggrbbr\"\>", ",", "\<\"grgbbr\"\>", ",", "\<\"rggbbr\"\>", 
+       ",", "\<\"bbgrrg\"\>", ",", "\<\"bgbrrg\"\>", ",", "\<\"gbbrrg\"\>", 
+       ",", "\<\"bbrgrg\"\>", ",", "\<\"brbgrg\"\>", ",", "\<\"rbbgrg\"\>", 
+       ",", "\<\"bgrbrg\"\>", ",", "\<\"gbrbrg\"\>", ",", "\<\"brgbrg\"\>", 
+       ",", "\<\"rbgbrg\"\>", ",", "\<\"grbbrg\"\>", ",", "\<\"rgbbrg\"\>", 
+       ",", "\<\"bbrrgg\"\>", ",", "\<\"brbrgg\"\>", ",", "\<\"rbbrgg\"\>", 
+       ",", "\<\"brrbgg\"\>", ",", "\<\"rbrbgg\"\>", ",", "\<\"rrbbgg\"\>", 
+       ",", "\<\"bgrrbg\"\>", ",", "\<\"gbrrbg\"\>", ",", "\<\"brgrbg\"\>", 
+       ",", "\<\"rbgrbg\"\>", ",", "\<\"grbrbg\"\>", ",", "\<\"rgbrbg\"\>", 
+       ",", "\<\"brrgbg\"\>", ",", "\<\"rbrgbg\"\>", ",", "\<\"rrbgbg\"\>", 
+       ",", "\<\"grrbbg\"\>", ",", "\<\"rgrbbg\"\>", ",", "\<\"rrgbbg\"\>", 
+       ",", "\<\"bggrrb\"\>", ",", "\<\"gbgrrb\"\>", ",", "\<\"ggbrrb\"\>", 
+       ",", "\<\"bgrgrb\"\>", ",", "\<\"gbrgrb\"\>", ",", "\<\"brggrb\"\>", 
+       ",", "\<\"rbggrb\"\>", ",", "\<\"grbgrb\"\>", ",", "\<\"rgbgrb\"\>", 
+       ",", "\<\"ggrbrb\"\>", ",", "\<\"grgbrb\"\>", ",", "\<\"rggbrb\"\>", 
+       ",", "\<\"bgrrgb\"\>", ",", "\<\"gbrrgb\"\>", ",", "\<\"brgrgb\"\>", 
+       ",", "\<\"rbgrgb\"\>", ",", "\<\"grbrgb\"\>", ",", "\<\"rgbrgb\"\>", 
+       ",", "\<\"brrggb\"\>", ",", "\<\"rbrggb\"\>", ",", "\<\"rrbggb\"\>", 
+       ",", "\<\"grrbgb\"\>", ",", "\<\"rgrbgb\"\>", ",", "\<\"rrgbgb\"\>", 
+       ",", "\<\"ggrrbb\"\>", ",", "\<\"grgrbb\"\>", ",", "\<\"rggrbb\"\>", 
+       ",", "\<\"grrgbb\"\>", ",", "\<\"rgrgbb\"\>", ",", "\<\"rrggbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbgrr\"\>", ",", "\<\"bbgbrr\"\>", ",", "\<\"bgbbrr\"\>", 
+       ",", "\<\"gbbbrr\"\>", ",", "\<\"bbbrgr\"\>", ",", "\<\"bbrbgr\"\>", 
+       ",", "\<\"brbbgr\"\>", ",", "\<\"rbbbgr\"\>", ",", "\<\"bbgrbr\"\>", 
+       ",", "\<\"bgbrbr\"\>", ",", "\<\"gbbrbr\"\>", ",", "\<\"bbrgbr\"\>", 
+       ",", "\<\"brbgbr\"\>", ",", "\<\"rbbgbr\"\>", ",", "\<\"bgrbbr\"\>", 
+       ",", "\<\"gbrbbr\"\>", ",", "\<\"brgbbr\"\>", ",", "\<\"rbgbbr\"\>", 
+       ",", "\<\"grbbbr\"\>", ",", "\<\"rgbbbr\"\>", ",", "\<\"bbbrrg\"\>", 
+       ",", "\<\"bbrbrg\"\>", ",", "\<\"brbbrg\"\>", ",", "\<\"rbbbrg\"\>", 
+       ",", "\<\"bbrrbg\"\>", ",", "\<\"brbrbg\"\>", ",", "\<\"rbbrbg\"\>", 
+       ",", "\<\"brrbbg\"\>", ",", "\<\"rbrbbg\"\>", ",", "\<\"rrbbbg\"\>", 
+       ",", "\<\"bbgrrb\"\>", ",", "\<\"bgbrrb\"\>", ",", "\<\"gbbrrb\"\>", 
+       ",", "\<\"bbrgrb\"\>", ",", "\<\"brbgrb\"\>", ",", "\<\"rbbgrb\"\>", 
+       ",", "\<\"bgrbrb\"\>", ",", "\<\"gbrbrb\"\>", ",", "\<\"brgbrb\"\>", 
+       ",", "\<\"rbgbrb\"\>", ",", "\<\"grbbrb\"\>", ",", "\<\"rgbbrb\"\>", 
+       ",", "\<\"bbrrgb\"\>", ",", "\<\"brbrgb\"\>", ",", "\<\"rbbrgb\"\>", 
+       ",", "\<\"brrbgb\"\>", ",", "\<\"rbrbgb\"\>", ",", "\<\"rrbbgb\"\>", 
+       ",", "\<\"bgrrbb\"\>", ",", "\<\"gbrrbb\"\>", ",", "\<\"brgrbb\"\>", 
+       ",", "\<\"rbgrbb\"\>", ",", "\<\"grbrbb\"\>", ",", "\<\"rgbrbb\"\>", 
+       ",", "\<\"brrgbb\"\>", ",", "\<\"rbrgbb\"\>", ",", "\<\"rrbgbb\"\>", 
+       ",", "\<\"grrbbb\"\>", ",", "\<\"rgrbbb\"\>", ",", "\<\"rrgbbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbbrr\"\>", ",", "\<\"bbbrbr\"\>", ",", "\<\"bbrbbr\"\>", 
+       ",", "\<\"brbbbr\"\>", ",", "\<\"rbbbbr\"\>", ",", "\<\"bbbrrb\"\>", 
+       ",", "\<\"bbrbrb\"\>", ",", "\<\"brbbrb\"\>", ",", "\<\"rbbbrb\"\>", 
+       ",", "\<\"bbrrbb\"\>", ",", "\<\"brbrbb\"\>", ",", "\<\"rbbrbb\"\>", 
+       ",", "\<\"brrbbb\"\>", ",", "\<\"rbrbbb\"\>", ",", "\<\"rrbbbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "2", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"gggggr\"\>", ",", "\<\"ggggrg\"\>", ",", "\<\"gggrgg\"\>", 
+       ",", "\<\"ggrggg\"\>", ",", "\<\"grgggg\"\>", ",", "\<\"rggggg\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["3", "2"]}], ",", "1", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bggggr\"\>", ",", "\<\"gbgggr\"\>", ",", "\<\"ggbggr\"\>", 
+       ",", "\<\"gggbgr\"\>", ",", "\<\"ggggbr\"\>", ",", "\<\"bgggrg\"\>", 
+       ",", "\<\"gbggrg\"\>", ",", "\<\"ggbgrg\"\>", ",", "\<\"gggbrg\"\>", 
+       ",", "\<\"bggrgg\"\>", ",", "\<\"gbgrgg\"\>", ",", "\<\"ggbrgg\"\>", 
+       ",", "\<\"bgrggg\"\>", ",", "\<\"gbrggg\"\>", ",", "\<\"brgggg\"\>", 
+       ",", "\<\"rbgggg\"\>", ",", "\<\"grbggg\"\>", ",", "\<\"rgbggg\"\>", 
+       ",", "\<\"ggrbgg\"\>", ",", "\<\"grgbgg\"\>", ",", "\<\"rggbgg\"\>", 
+       ",", "\<\"gggrbg\"\>", ",", "\<\"ggrgbg\"\>", ",", "\<\"grggbg\"\>", 
+       ",", "\<\"rgggbg\"\>", ",", "\<\"ggggrb\"\>", ",", "\<\"gggrgb\"\>", 
+       ",", "\<\"ggrggb\"\>", ",", "\<\"grgggb\"\>", ",", "\<\"rggggb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbgggr\"\>", ",", "\<\"bgbggr\"\>", ",", "\<\"gbbggr\"\>", 
+       ",", "\<\"bggbgr\"\>", ",", "\<\"gbgbgr\"\>", ",", "\<\"ggbbgr\"\>", 
+       ",", "\<\"bgggbr\"\>", ",", "\<\"gbggbr\"\>", ",", "\<\"ggbgbr\"\>", 
+       ",", "\<\"gggbbr\"\>", ",", "\<\"bbggrg\"\>", ",", "\<\"bgbgrg\"\>", 
+       ",", "\<\"gbbgrg\"\>", ",", "\<\"bggbrg\"\>", ",", "\<\"gbgbrg\"\>", 
+       ",", "\<\"ggbbrg\"\>", ",", "\<\"bbgrgg\"\>", ",", "\<\"bgbrgg\"\>", 
+       ",", "\<\"gbbrgg\"\>", ",", "\<\"bbrggg\"\>", ",", "\<\"brbggg\"\>", 
+       ",", "\<\"rbbggg\"\>", ",", "\<\"bgrbgg\"\>", ",", "\<\"gbrbgg\"\>", 
+       ",", "\<\"brgbgg\"\>", ",", "\<\"rbgbgg\"\>", ",", "\<\"grbbgg\"\>", 
+       ",", "\<\"rgbbgg\"\>", ",", "\<\"bggrbg\"\>", ",", "\<\"gbgrbg\"\>", 
+       ",", "\<\"ggbrbg\"\>", ",", "\<\"bgrgbg\"\>", ",", "\<\"gbrgbg\"\>", 
+       ",", "\<\"brggbg\"\>", ",", "\<\"rbggbg\"\>", ",", "\<\"grbgbg\"\>", 
+       ",", "\<\"rgbgbg\"\>", ",", "\<\"ggrbbg\"\>", ",", "\<\"grgbbg\"\>", 
+       ",", "\<\"rggbbg\"\>", ",", "\<\"bgggrb\"\>", ",", "\<\"gbggrb\"\>", 
+       ",", "\<\"ggbgrb\"\>", ",", "\<\"gggbrb\"\>", ",", "\<\"bggrgb\"\>", 
+       ",", "\<\"gbgrgb\"\>", ",", "\<\"ggbrgb\"\>", ",", "\<\"bgrggb\"\>", 
+       ",", "\<\"gbrggb\"\>", ",", "\<\"brgggb\"\>", ",", "\<\"rbgggb\"\>", 
+       ",", "\<\"grbggb\"\>", ",", "\<\"rgbggb\"\>", ",", "\<\"ggrbgb\"\>", 
+       ",", "\<\"grgbgb\"\>", ",", "\<\"rggbgb\"\>", ",", "\<\"gggrbb\"\>", 
+       ",", "\<\"ggrgbb\"\>", ",", "\<\"grggbb\"\>", ",", "\<\"rgggbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbggr\"\>", ",", "\<\"bbgbgr\"\>", ",", "\<\"bgbbgr\"\>", 
+       ",", "\<\"gbbbgr\"\>", ",", "\<\"bbggbr\"\>", ",", "\<\"bgbgbr\"\>", 
+       ",", "\<\"gbbgbr\"\>", ",", "\<\"bggbbr\"\>", ",", "\<\"gbgbbr\"\>", 
+       ",", "\<\"ggbbbr\"\>", ",", "\<\"bbbgrg\"\>", ",", "\<\"bbgbrg\"\>", 
+       ",", "\<\"bgbbrg\"\>", ",", "\<\"gbbbrg\"\>", ",", "\<\"bbbrgg\"\>", 
+       ",", "\<\"bbrbgg\"\>", ",", "\<\"brbbgg\"\>", ",", "\<\"rbbbgg\"\>", 
+       ",", "\<\"bbgrbg\"\>", ",", "\<\"bgbrbg\"\>", ",", "\<\"gbbrbg\"\>", 
+       ",", "\<\"bbrgbg\"\>", ",", "\<\"brbgbg\"\>", ",", "\<\"rbbgbg\"\>", 
+       ",", "\<\"bgrbbg\"\>", ",", "\<\"gbrbbg\"\>", ",", "\<\"brgbbg\"\>", 
+       ",", "\<\"rbgbbg\"\>", ",", "\<\"grbbbg\"\>", ",", "\<\"rgbbbg\"\>", 
+       ",", "\<\"bbggrb\"\>", ",", "\<\"bgbgrb\"\>", ",", "\<\"gbbgrb\"\>", 
+       ",", "\<\"bggbrb\"\>", ",", "\<\"gbgbrb\"\>", ",", "\<\"ggbbrb\"\>", 
+       ",", "\<\"bbgrgb\"\>", ",", "\<\"bgbrgb\"\>", ",", "\<\"gbbrgb\"\>", 
+       ",", "\<\"bbrggb\"\>", ",", "\<\"brbggb\"\>", ",", "\<\"rbbggb\"\>", 
+       ",", "\<\"bgrbgb\"\>", ",", "\<\"gbrbgb\"\>", ",", "\<\"brgbgb\"\>", 
+       ",", "\<\"rbgbgb\"\>", ",", "\<\"grbbgb\"\>", ",", "\<\"rgbbgb\"\>", 
+       ",", "\<\"bggrbb\"\>", ",", "\<\"gbgrbb\"\>", ",", "\<\"ggbrbb\"\>", 
+       ",", "\<\"bgrgbb\"\>", ",", "\<\"gbrgbb\"\>", ",", "\<\"brggbb\"\>", 
+       ",", "\<\"rbggbb\"\>", ",", "\<\"grbgbb\"\>", ",", "\<\"rgbgbb\"\>", 
+       ",", "\<\"ggrbbb\"\>", ",", "\<\"grgbbb\"\>", ",", "\<\"rggbbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbbgr\"\>", ",", "\<\"bbbgbr\"\>", ",", "\<\"bbgbbr\"\>", 
+       ",", "\<\"bgbbbr\"\>", ",", "\<\"gbbbbr\"\>", ",", "\<\"bbbbrg\"\>", 
+       ",", "\<\"bbbrbg\"\>", ",", "\<\"bbrbbg\"\>", ",", "\<\"brbbbg\"\>", 
+       ",", "\<\"rbbbbg\"\>", ",", "\<\"bbbgrb\"\>", ",", "\<\"bbgbrb\"\>", 
+       ",", "\<\"bgbbrb\"\>", ",", "\<\"gbbbrb\"\>", ",", "\<\"bbbrgb\"\>", 
+       ",", "\<\"bbrbgb\"\>", ",", "\<\"brbbgb\"\>", ",", "\<\"rbbbgb\"\>", 
+       ",", "\<\"bbgrbb\"\>", ",", "\<\"bgbrbb\"\>", ",", "\<\"gbbrbb\"\>", 
+       ",", "\<\"bbrgbb\"\>", ",", "\<\"brbgbb\"\>", ",", "\<\"rbbgbb\"\>", 
+       ",", "\<\"bgrbbb\"\>", ",", "\<\"gbrbbb\"\>", ",", "\<\"brgbbb\"\>", 
+       ",", "\<\"rbgbbb\"\>", ",", "\<\"grbbbb\"\>", ",", "\<\"rgbbbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbbbr\"\>", ",", "\<\"bbbbrb\"\>", ",", "\<\"bbbrbb\"\>", 
+       ",", "\<\"bbrbbb\"\>", ",", "\<\"brbbbb\"\>", ",", "\<\"rbbbbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "2", ",", 
+     RowBox[{"{", "\<\"gggggg\"\>", "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["5", "2"]}], ",", "1", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bggggg\"\>", ",", "\<\"gbgggg\"\>", ",", "\<\"ggbggg\"\>", 
+       ",", "\<\"gggbgg\"\>", ",", "\<\"ggggbg\"\>", ",", "\<\"gggggb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbgggg\"\>", ",", "\<\"bgbggg\"\>", ",", "\<\"gbbggg\"\>", 
+       ",", "\<\"bggbgg\"\>", ",", "\<\"gbgbgg\"\>", ",", "\<\"ggbbgg\"\>", 
+       ",", "\<\"bgggbg\"\>", ",", "\<\"gbggbg\"\>", ",", "\<\"ggbgbg\"\>", 
+       ",", "\<\"gggbbg\"\>", ",", "\<\"bggggb\"\>", ",", "\<\"gbgggb\"\>", 
+       ",", "\<\"ggbggb\"\>", ",", "\<\"gggbgb\"\>", ",", "\<\"ggggbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["3", "2"]}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbggg\"\>", ",", "\<\"bbgbgg\"\>", ",", "\<\"bgbbgg\"\>", 
+       ",", "\<\"gbbbgg\"\>", ",", "\<\"bbggbg\"\>", ",", "\<\"bgbgbg\"\>", 
+       ",", "\<\"gbbgbg\"\>", ",", "\<\"bggbbg\"\>", ",", "\<\"gbgbbg\"\>", 
+       ",", "\<\"ggbbbg\"\>", ",", "\<\"bbgggb\"\>", ",", "\<\"bgbggb\"\>", 
+       ",", "\<\"gbbggb\"\>", ",", "\<\"bggbgb\"\>", ",", "\<\"gbgbgb\"\>", 
+       ",", "\<\"ggbbgb\"\>", ",", "\<\"bgggbb\"\>", ",", "\<\"gbggbb\"\>", 
+       ",", "\<\"ggbgbb\"\>", ",", "\<\"gggbbb\"\>"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbbgg\"\>", ",", "\<\"bbbgbg\"\>", ",", "\<\"bbgbbg\"\>", 
+       ",", "\<\"bgbbbg\"\>", ",", "\<\"gbbbbg\"\>", ",", "\<\"bbbggb\"\>", 
+       ",", "\<\"bbgbgb\"\>", ",", "\<\"bgbbgb\"\>", ",", "\<\"gbbbgb\"\>", 
+       ",", "\<\"bbggbb\"\>", ",", "\<\"bgbgbb\"\>", ",", "\<\"gbbgbb\"\>", 
+       ",", "\<\"bggbbb\"\>", ",", "\<\"gbgbbb\"\>", ",", "\<\"ggbbbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"bbbbbg\"\>", ",", "\<\"bbbbgb\"\>", ",", "\<\"bbbgbb\"\>", 
+       ",", "\<\"bbgbbb\"\>", ",", "\<\"bgbbbb\"\>", ",", "\<\"gbbbbb\"\>"}], 
+      "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"{", "\<\"bbbbbb\"\>", "}"}]}], "}"}]}], "}"}]], "Print",
+ CellChangeTimes->{3.90798459549868*^9, 3.907984682878952*^9, 
+  3.907984755961856*^9, 3.907984912308912*^9, 3.911296274555049*^9, 
+  3.911296462708082*^9, 3.911448027593052*^9, 3.924069709933847*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"edfc36e8-1980-43ff-a11d-46b1b48dc679"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   InterpretationBox[{
+     TagBox[
+      TagBox[
+       {RGBColor[0.368417, 0.506779, 0.709798], PointSize[Large], 
+        AbsoluteThickness[2], PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQAWIQDQEcDlAGDpoFSn+wR6Vh8j9wiGMAqPgDNPVwfQxo
+5u1HpeH6YeJo+mDgAbp+mLoDaDTM/Wjq4PbBzEN3BwwcQLWP4wAqDQ+/Azjc
+wYBmP7o9MPP3o5kLBQIHACp+MMg=
+         "]]},
+       Annotation[#, "Charting`Private`Tag#1"]& ],
+      {"WolframDynamicHighlight", <|
+       "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>}], 
+     StyleBox[
+      DynamicBox[(Charting`HighlightActionBox["DynamicHighlight", {}, 
+        Slot["HighlightElements"], 
+        Slot["LayoutOptions"], 
+        Slot["Meta"], 
+        Charting`HighlightActionFunction["DynamicHighlight", {{
+           Annotation[{
+             Directive[
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              AbsoluteThickness[2], 
+              PointSize[Large]], 
+             Point[CompressedData["
+1:eJxTTMoPSmViYGCQAWIQDQEcDlAGDpoFSn+wR6Vh8j9wiGMAqPgDNPVwfQxo
+5u1HpeH6YeJo+mDgAbp+mLoDaDTM/Wjq4PbBzEN3BwwcQLWP4wAqDQ+/Azjc
+wYBmP7o9MPP3o5kLBQIHACp+MMg=
+              "]]}, "Charting`Private`Tag#1"]}}, <|
+         "HighlightElements" -> <|
+           "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+          "LayoutOptions" -> <|
+           "PanelPlotLayout" -> <||>, "PlotRange" -> {{-3., 3.}, {-4., 2.}}, 
+            "Frame" -> {{False, False}, {False, False}}, 
+            "AxesOrigin" -> {0, 0}, "ImageSize" -> {360, 360/GoldenRatio}, 
+            "Axes" -> {True, True}, "LabelStyle" -> {}, "AspectRatio" -> 
+            GoldenRatio^(-1), "DefaultStyle" -> {
+              Directive[
+               RGBColor[0.368417, 0.506779, 0.709798], 
+               AbsoluteThickness[2], 
+               PointSize[Large]]}, 
+            "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+                Identity[
+                 Part[#, 1]], 
+                Identity[
+                 Part[#, 2]]}& ), 
+              "ScalingFunctions" -> {{Identity, Identity}, {
+                Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> 
+            False|>, 
+          "Meta" -> <|
+           "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+            ListPlot, "GroupHighlight" -> False|>|>]]& )[<|
+        "HighlightElements" -> <|
+          "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+         "LayoutOptions" -> <|
+          "PanelPlotLayout" -> <||>, "PlotRange" -> {{-3., 3.}, {-4., 2.}}, 
+           "Frame" -> {{False, False}, {False, False}}, 
+           "AxesOrigin" -> {0, 0}, "ImageSize" -> {360, 360/GoldenRatio}, 
+           "Axes" -> {True, True}, "LabelStyle" -> {}, "AspectRatio" -> 
+           GoldenRatio^(-1), "DefaultStyle" -> {
+             Directive[
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              AbsoluteThickness[2], 
+              PointSize[Large]]}, 
+           "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+               Identity[
+                Part[#, 1]], 
+               Identity[
+                Part[#, 2]]}& ), 
+             "ScalingFunctions" -> {{Identity, Identity}, {
+               Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> 
+           False|>, 
+         "Meta" -> <|
+          "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+           ListPlot, "GroupHighlight" -> False|>|>],
+       ImageSizeCache->{{4.503599627370496*^15, -4.503599627370496*^15}, {
+        4.503599627370496*^15, -4.503599627370496*^15}}],
+      Selectable->False]},
+    Annotation[{{
+       Annotation[{
+         Directive[
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[2], 
+          PointSize[Large]], 
+         Point[CompressedData["
+1:eJxTTMoPSmViYGCQAWIQDQEcDlAGDpoFSn+wR6Vh8j9wiGMAqPgDNPVwfQxo
+5u1HpeH6YeJo+mDgAbp+mLoDaDTM/Wjq4PbBzEN3BwwcQLWP4wAqDQ+/Azjc
+wYBmP7o9MPP3o5kLBQIHACp+MMg=
+          "]]}, "Charting`Private`Tag#1"]}}, <|
+     "HighlightElements" -> <|
+       "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+      "LayoutOptions" -> <|
+       "PanelPlotLayout" -> <||>, "PlotRange" -> {{-3., 3.}, {-4., 2.}}, 
+        "Frame" -> {{False, False}, {False, False}}, "AxesOrigin" -> {0, 0}, 
+        "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, 
+        "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), "DefaultStyle" -> {
+          Directive[
+           RGBColor[0.368417, 0.506779, 0.709798], 
+           AbsoluteThickness[2], 
+           PointSize[Large]]}, 
+        "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+            Identity[
+             Part[#, 1]], 
+            Identity[
+             Part[#, 2]]}& ), 
+          "ScalingFunctions" -> {{Identity, Identity}, {
+            Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> False|>, 
+      "Meta" -> <|
+       "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+        ListPlot, "GroupHighlight" -> False|>|>, 
+     "DynamicHighlight"]], {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+    "DefaultGraphicsInteraction" -> {
+     "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+      "Effects" -> {
+       "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+        "Droplines" -> {
+         "freeformCursorMode" -> True, 
+          "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> 
+    AbsolutePointSize[6], "DefaultPlotStyle" -> {
+      Directive[
+       RGBColor[0.368417, 0.506779, 0.709798], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.880722, 0.611041, 0.142051], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.560181, 0.691569, 0.194885], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.922526, 0.385626, 0.209179], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.528488, 0.470624, 0.701351], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.772079, 0.431554, 0.102387], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.363898, 0.618501, 0.782349], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[1, 0.75, 0], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.647624, 0.37816, 0.614037], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.571589, 0.586483, 0.], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.915, 0.3325, 0.2125], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.40082222609352647`, 0.5220066643438841, 0.85], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+       AbsoluteThickness[2]], 
+      Directive[
+       RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965], 
+       AbsoluteThickness[2]]}, "DomainPadding" -> Scaled[0.02], 
+    "PointSizeFunction" -> "SmallPointSize", "RangePadding" -> Scaled[0.05], 
+    "OptimizePlotMarkers" -> True, "IncludeHighlighting" -> "CurrentPoint", 
+    "HighlightStyle" -> Automatic, "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotRange->{{-3., 3.}, {-4., 2.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Print",
+ CellChangeTimes->{3.90798459549868*^9, 3.907984682878952*^9, 
+  3.907984755961856*^9, 3.907984912308912*^9, 3.911296274555049*^9, 
+  3.911296462708082*^9, 3.911448027593052*^9, 3.924069710416506*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"63652e51-e755-4371-9920-db95363d716b"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440, 756},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"14.0 for Linux x86 (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a8826535-c9d3-4691-81e2-6cc28bff2cd3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1241, 25, 78, "Input",ExpressionUUID->"20069e3a-2351-4b02-941c-d04fd54b2688"],
+Cell[CellGroupData[{
+Cell[1846, 51, 22583, 391, 1133, "Print",ExpressionUUID->"edfc36e8-1980-43ff-a11d-46b1b48dc679"],
+Cell[24432, 444, 8458, 203, 253, "Print",ExpressionUUID->"63652e51-e755-4371-9920-db95363d716b"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
